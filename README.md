@@ -1,2 +1,2 @@
 # ScarsSillyStuff
-balala mod
+a balatro mod that has some things inside
