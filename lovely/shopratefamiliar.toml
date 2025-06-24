@@ -1,0 +1,13 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+# forcing familiar into letting me modify fortune cards shop rate
+# note: may not be needed in the slightest but thats ok
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Familiar "Items/Consumable Types/Fortune/1Def_Fortune.lua"]'
+pattern = '''default = 'c_fam_the_broken','''
+position = 'before'
+match_indent = true
+payload = '''shop_rate = 0.0,'''
