@@ -95,6 +95,14 @@ return {
                     "{C:inactive}(Must have room){}",
                     "{C:inactive,s:0.8}You can learn more about energy too.{}"
                 }
+            },
+            j_sss_purplejoker = {
+                name = "Purple Joker",
+                text = {
+                    "Gives {C:purple}+#1# Score{} for each",
+                    "remaining card in {C:attention}deck{}",
+                    "{C:inactive}(Currently {C:purple}+#2#{C:inactive} Score)",
+                }
             }
         },
         Tag = {

@@ -81,3 +81,35 @@ SMODS.Joker {
         end 
     end
 }
+SMODS.Joker {
+    key = "purplejoker",
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.score,
+                card.ability.extra.score * ((G.deck and G.deck.cards) and #G.deck.cards or 52)
+            }
+        }
+    end,
+    cost = 1,
+    rarity = 1,
+    blueprint_compat = true,
+    eternal_compat = true,
+    demicoloncompat = true,
+    discovered = true,
+    atlas = "SSSJokers",
+    pos = {
+        x = 2,
+        y = 0
+    },
+    config = {
+        extra = {
+            score = 25
+        }
+    },
+    calculate = function(self, card, context)
+        if context.after or context.forcetrigger then
+            SSS.PlusScore(card, card.ability.extra.score * #G.deck.cards)
+        end
+    end
+}
