@@ -52,8 +52,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.xscore,
-                card.ability.extra.ismulted
+                card.ability.extra.xscore
             }
         }
     end,
@@ -70,17 +69,12 @@ SMODS.Joker {
     },
     config = {
         extra = {
-            xscore = 5,
-            ismulted = true
+            xscore = 5
         }
     },
     calculate = function(self, card, context)
-        if context.setting_blind then
-            card.ability.extra.ismulted = false
-        end
-        if context.end_of_round and card.ability.extra.ismulted == false then -- chess battle advanced (i have no clue if this will work)
-            SSS.XScore(card) -- update: it worked but went through multiple times for some reason. hoping ismulted will fix it
-            card.ability.extra.ismulted = true
+        if context.end_of_round and context.main_eval and context.game_over == false then
+            SSS.XScore(card)
         end
         if context.forcetrigger then
             SSS.XScore(card)

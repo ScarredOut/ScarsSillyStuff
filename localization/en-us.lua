@@ -54,14 +54,14 @@ return {
                 name = "Cash Back",
                 text = {
                     "Gives {C:money}$#1#{} at the end of round",
-                    "for each {C:attention}voucher{} redeemed in the run.",
+                    "for each {C:attention}voucher{} redeemed in the run",
                     "{C:inactive}(Currently {}{C:money}$#2#{}{C:inactive}){}"
                 }
             },
             j_sss_starsinthesky = {
                 name = "Stars In The Sky",
                 text = {
-                    "When a {C:blue}Planet{} card is {C:attention}used{},",
+                    "When a {C:planet}Planet{} card is {C:attention}used{},",
                     "generates a {C:attention}The Star{} {C:purple}tarot{} card"
                 }
             },
@@ -78,6 +78,22 @@ return {
                 text = {
                     "Gives {C:purple}Score{} equal to",
                     "the {C:attention}level of played hand{} {X:purple,C:white} ^#1#{}"
+                }
+            },
+            j_sss_scratchoff = {
+                name = "Scratch Off",
+                text = {
+                    "{C:attention}Lucky{} cards held in hand are {C:attention}destroyed{}",
+                    "and give {C:money}$#1#-#2#{} dollars"
+                }
+            },
+            j_sss_energywarning = {
+                name = "Energy Warning",
+                text = {
+                    "When {C:attention}Blind{} selected, if you have {C:money}$#1#{} or less,",
+                    "create a {C:attention}The Hermit{}",
+                    "{C:inactive}(Must have room){}",
+                    "{C:inactive,s:0.8}You can learn more about energy too.{}"
                 }
             }
         },

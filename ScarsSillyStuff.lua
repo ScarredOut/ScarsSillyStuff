@@ -1,33 +1,33 @@
 SSS = SMODS.current_mod
-if not SMODS.find_mod("Cryptid") then -- mod check list (this mod's priority is so high because i plan on adding a lot of crossmod stuff)
-    print("[SillyStuff] Cryptid not installed.")
-    SSS.CryptidInstalled = false
-else
+if next(SMODS.find_mod("Cryptid")) then -- mod check list (this mod's priority is so high because i plan on adding a lot of crossmod stuff)
+    print("[SillyStuff] Cryptid installed.")
     SSS.CryptidInstalled = true
-end
-if not SMODS.find_mod("Familiar") then
-    print("[SillyStuff] Familiar not installed.")
-    SSS.FamiliarInstalled = false
 else
+    SSS.CryptidInstalled = false
+end
+if next(SMODS.find_mod("Familiar")) then
+    print("[SillyStuff] Familiar installed.")
     SSS.FamiliarInstalled = true
-end
-if not SMODS.find_mod("Paya's Terrible Additions") then
-    print("[SillyStuff] Paya's Terrible Additions not installed.")
-    SSS.PTAInstalled = false
 else
+    SSS.FamiliarInstalled = false
+end
+if next(SMODS.find_mod("Paya's Terrible Additions")) then
+    print("[SillyStuff] Paya's Terrible Additions installed.")
     SSS.PTAInstalled = true
-end
-if not SMODS.find_mod("Talisman") then
-    print("[SillyStuff] Talisman not installed.")
-    SSS.TalismanInstalled = false
 else
+    SSS.PTAInstalled = false
+end
+if next(SMODS.find_mod("Talisman")) then
+    print("[SillyStuff] Talisman installed.")
     SSS.TalismanInstalled = true
-end
-if not SMODS.find_mod("Yahimod") then
-    print("[SillyStuff] Yahimod not installed.")
-    SSS.YahimodInstalled = false
 else
+    SSS.TalismanInstalled = false
+end
+if next(SMODS.find_mod("Yahimod")) then
+    print("[SillyStuff] Yahimod installed.")
     SSS.YahimodInstalled = true
+else
+    SSS.YahimodInstalled = false
 end
 local files = {
     "func/misc",
@@ -128,59 +128,4 @@ if false then -- jokers here are disabled
             end
         end
     }
-    SMODS.Joker {
-    key = "scratchoff",
-    loc_txt = {
-        name = "Scratch Off",
-        text = {
-            "{C:attention}Lucky{} cards held in hand are {C:attention}destroyed{}",
-            "and give {C:money}$#1#-#2#{} dollars"
-        }
-    },
-    loc_vars = function(self, info_queue, card)
-        return {
-            vars = {
-                card.ability.extra.min,
-                card.ability.extra.max
-            }
-        }
-    end,
-    cost = 7,
-    rarity = 1,
-    blueprint_compat = true,
-    eternal_compat = true,
-    discovered = true,
-    atlas = "vouchercashbackatlas",
-    pos = {
-        x = 0,
-        y = 0
-    },
-    config = {
-        extra = {
-            max = 15,
-            min = 5
-        }
-    },
-    calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.hand and not context.end_of_round then
-            if context.other_card.ability.name == 'Lucky Card' then
-                local tempmoney = pseudorandom('scratchoff', card.ability.extra.min, card.ability.extra.max)
-                G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + tempmoney
-                G.E_MANAGER:add_event(Event({func = (function() G.GAME.dollar_buffer = 0; return true end)}))
-                return {
-                    dollars = tempmoney,
-                    message_card = context.other_card,
-                    colour = G.C.MONEY
-                }
-            end
-        end
-        if context.individual and context.cardarea == G.hand and not context.end_of_round then
-            if context.other_card.ability.name == 'Lucky Card' then
-                return {
-                    remove = true
-                }
-            end
-        end
-    end
-}
 end
