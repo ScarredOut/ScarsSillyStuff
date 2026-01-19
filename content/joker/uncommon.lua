@@ -89,3 +89,41 @@ SMODS.Joker {
         end
     end
 }
+SMODS.Joker {
+    key = "keyandchain",
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.xmult,
+                card.ability.extra.score
+            }
+        }
+    end,
+    cost = 6,
+    rarity = 2,
+    blueprint_compat = true,
+    eternal_compat = true,
+    demicoloncompat = true,
+    discovered = true,
+    atlas = "SSSPlaceholders",
+    pos = {
+        x = 0,
+        y = 0
+    },
+    config = {
+        extra = {
+            xmult = 4,
+            score = -750
+        }
+    },
+    calculate = function(self, card, context)
+         if context.joker_main or context.forcetrigger then
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        end
+        if context.after or context.forcetrigger then
+            SSS.PlusScore(card, score)
+        end
+    end
+}

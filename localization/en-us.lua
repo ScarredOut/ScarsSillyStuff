@@ -103,6 +103,13 @@ return {
                     "remaining card in {C:attention}deck{}",
                     "{C:inactive}(Currently {C:purple}+#2#{C:inactive} Score)",
                 }
+            },
+            j_sss_keyandchain = {
+                name = "Key and Chain",
+                text = {
+                    "{X:mult,C:white} X#1#{} Mult{}",
+                    "{C:purple}#2#{} Score"
+                }
             }
         },
         Tag = {

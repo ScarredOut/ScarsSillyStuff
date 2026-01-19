@@ -125,7 +125,7 @@ SMODS.Joker {
     },
     config = {
         extra = {
-            expamount = 6,
+            expamount = 5,
             ismulted = true
         }
     },

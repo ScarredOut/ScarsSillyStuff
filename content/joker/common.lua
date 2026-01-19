@@ -91,7 +91,7 @@ SMODS.Joker {
             }
         }
     end,
-    cost = 1,
+    cost = 5,
     rarity = 1,
     blueprint_compat = true,
     eternal_compat = true,
@@ -110,6 +110,48 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.after or context.forcetrigger then
             SSS.PlusScore(card, card.ability.extra.score * #G.deck.cards)
+        end
+    end
+}
+SMODS.Joker {
+    key = "scratchoff",
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.min,
+                card.ability.extra.max
+            }
+        }
+    end,
+    cost = 7,
+    rarity = 1,
+    blueprint_compat = true,
+    eternal_compat = true,
+    discovered = true,
+    atlas = "SSSPlaceholders",
+    pos = {
+        x = 0,
+        y = 0
+    },
+    config = {
+        extra = {
+            max = 15,
+            min = 5
+        }
+    },
+    calculate = function(self, card, context)
+        if context.destroy_card and context.cardarea == G.hand then
+            if SMODS.has_enhancement(context.destroy_card, "m_lucky") then
+                local tempmoney = pseudorandom('scratchoff', card.ability.extra.min, card.ability.extra.max)
+                G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + tempmoney
+                G.E_MANAGER:add_event(Event({func = (function() G.GAME.dollar_buffer = 0; return true end)}))
+                return {
+                    dollars = tempmoney,
+                    message_card = context.destroy_card,
+                    colour = G.C.MONEY,
+                    remove = true
+                }
+            end
         end
     end
 }
