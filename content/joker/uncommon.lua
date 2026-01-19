@@ -89,6 +89,7 @@ SMODS.Joker {
         end
     end
 }
+--[[
 SMODS.Joker {
     key = "keyandchain",
     loc_vars = function(self, info_queue, card)
@@ -113,7 +114,7 @@ SMODS.Joker {
     config = {
         extra = {
             xmult = 4,
-            score = -750
+            score = 750
         }
     },
     calculate = function(self, card, context)
@@ -123,7 +124,8 @@ SMODS.Joker {
             }
         end
         if context.after or context.forcetrigger then
-            SSS.PlusScore(card, score)
+            SSS.MinusScore(card, score)
         end
     end
 }
+]]

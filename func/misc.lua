@@ -59,6 +59,21 @@ function SSS.PlusScore(card, score)
         colour = G.C.PURPLE
     }
 end
+function SSS.MinusScore(card, score)
+    local plusscore = score
+    G.E_MANAGER:add_event(Event({
+        func = function() 
+            G.GAME.chips = (to_big(G.GAME.chips))-(to_big(plusscore))
+            G.HUD:get_UIE_by_ID('chip_UI_count'):juice_up(0.3, 0.3)
+            play_sound('xchips')
+            return true
+        end,
+    }))
+    return {
+        message = "-" .. tostring(plusscore) .. " Score",
+        colour = G.C.PURPLE
+    }
+end
 function SSS.GetPlayedHandLevel()
     local text = G.FUNCS.get_poker_hand_info(G.play.cards)
     local level = to_number(G.GAME.hands[text].level)
