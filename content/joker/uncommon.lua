@@ -89,7 +89,7 @@ SMODS.Joker {
         end
     end
 }
---[[
+
 SMODS.Joker {
     key = "keyandchain",
     loc_vars = function(self, info_queue, card)
@@ -124,8 +124,7 @@ SMODS.Joker {
             }
         end
         if context.after or context.forcetrigger then
-            SSS.MinusScore(card, score)
+            SSS.MinusScore(card, card.ability.extra.score)
         end
     end
 }
-]]

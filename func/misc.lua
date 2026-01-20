@@ -45,32 +45,30 @@ function SSS.XScore(card) -- i owe astronomica money for this (sensing a theme h
     }
 end
 function SSS.PlusScore(card, score)
-    local plusscore = score
     G.E_MANAGER:add_event(Event({
         func = function() 
-            G.GAME.chips = (to_big(G.GAME.chips))+(to_big(plusscore))
+            G.GAME.chips = (to_big(G.GAME.chips))+(to_big(score))
             G.HUD:get_UIE_by_ID('chip_UI_count'):juice_up(0.3, 0.3)
             play_sound('xchips')
             return true
         end,
     }))
     return {
-        message = "+" .. tostring(plusscore) .. " Score",
+        message = "+" .. tostring(score) .. " Score",
         colour = G.C.PURPLE
     }
 end
 function SSS.MinusScore(card, score)
-    local plusscore = score
     G.E_MANAGER:add_event(Event({
-        func = function() 
-            G.GAME.chips = (to_big(G.GAME.chips))-(to_big(plusscore))
+        func = function()
+            G.GAME.chips = (to_big(G.GAME.chips))-(to_big(score))
             G.HUD:get_UIE_by_ID('chip_UI_count'):juice_up(0.3, 0.3)
             play_sound('xchips')
             return true
         end,
     }))
     return {
-        message = "-" .. tostring(plusscore) .. " Score",
+        message = "-" .. tostring(score) .. " Score",
         colour = G.C.PURPLE
     }
 end

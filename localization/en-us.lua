@@ -108,7 +108,7 @@ return {
                 name = "Key and Chain",
                 text = {
                     "{X:mult,C:white} X#1#{} Mult{}",
-                    "{C:purple}#2#{} Score"
+                    "{C:purple}-#2#{} Score"
                 }
             }
         },
