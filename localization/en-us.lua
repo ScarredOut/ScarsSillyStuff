@@ -18,6 +18,13 @@ return {
                     "{C:dark_edition,T:v_SSS_familiartarotvouchert2}#1#{},",
                     "{C:dark_edition,T:v_tarot_tycoon}#2#{}"
                 }
+            },
+            b_sss_tagenthusiast = {
+                name = "Tag Enthusiast Deck",
+                text = {
+                    "All {C:attention}tags{} may appear at {C:attention}any time{}",
+                    "Start with an {C:attention}Eternal{} {C:attention, T:j_throwback}Throwback{}"
+                }
             }
         },
         Joker = {

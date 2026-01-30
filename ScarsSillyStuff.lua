@@ -31,6 +31,7 @@ else
 end
 local files = {
     "func/misc",
+    "func/hooks",
     "content/atlas",
     "content/tag",
     "content/voucher",
@@ -47,6 +48,7 @@ local FamiliarFiles = {
 local CryptidFiles = {
     "content/crossmod/Cryptid/code",
     "content/crossmod/Cryptid/joker/common",
+    "content/crossmod/Cryptid/joker/exotic",
 }
 local PTAFiles = {
     "content/crossmod/PTA/joker/common",
@@ -61,7 +63,6 @@ if SSS.FamiliarInstalled then
     end
 end
 if SSS.CryptidInstalled then
-    print("[SillyStuff] Cryptid installed, adding cross mod...")
     for i, v in pairs(CryptidFiles) do
 	    assert(SMODS.load_file(v..".lua"))()
     end

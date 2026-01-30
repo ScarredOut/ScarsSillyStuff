@@ -56,9 +56,9 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     discovered = true,
-    atlas = "SSSPlaceholders",
+    atlas = "SSSJokers",
     pos = {
-        x = 0,
+        x = 3,
         y = 0
     },
     config = {
