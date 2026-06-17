@@ -128,3 +128,47 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "conspirator",
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.xmult,
+                card.ability.extra.planetreq,
+                card.ability.extra.total
+            }
+        }
+    end,
+    cost = 5,
+    rarity = 2,
+    blueprint_compat = true,
+    eternal_compat = true,
+    demicoloncompat = true,
+    discovered = true,
+    atlas = "SSSPlaceholders",
+    pos = {
+        x = 0,
+        y = 0
+    },
+    config = {
+        extra = {
+            xmult = 4,
+            planetreq = 5,
+            total = 0 -- placeholder
+        }
+    },
+    calculate = function(self, card, context)
+        if context.buying_card or context.using_consumeable then -- set total correctly
+            local amount = SSS.GetAmountOfPlanetsUsed()
+            card.ability.extra.total = amount
+        end
+        if context.joker_main or context.forcetrigger then -- apply xmult if good
+            if card.ability.extra.total < card.ability.extra.planetreq then
+                return {
+                    xmult = card.ability.extra.xmult
+                }
+            end
+        end
+    end
+}

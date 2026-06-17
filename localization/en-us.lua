@@ -117,6 +117,14 @@ return {
                     "{X:mult,C:white} X#1#{} Mult{}",
                     "{C:purple}-#2#{} Score"
                 }
+            },
+            j_sss_conspirator = {
+                name = "Conspirator Joker",
+                text = {
+                    "{X:mult,C:white} X#1#{} Mult{} if you have used",
+                    "{C:attention}less than #2#{} {C:planet}Planet{} cards this run",
+                    "{C:inactive}(Currently {C:planet}#3#{C:inactive} Planets used)"
+                }
             }
         },
         Tag = {

@@ -84,3 +84,10 @@ function SSS.IsInShop()
         return false
     end
 end
+function SSS.GetAmountOfPlanetsUsed() -- Should this REALLLY be a function? eh who cares, if the mod works then ppl dont care
+    local planets_used = 0
+    if G.GAME.consumeable_usage_total then
+		planets_used = G.GAME.consumeable_usage_total.planet or 0
+	end
+    return planets_used
+end

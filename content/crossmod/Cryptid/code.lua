@@ -53,7 +53,6 @@ SMODS.Consumable {
         return SSS.IsInShop()
     end,
     use = function(self, card, area)
-        print("hello.")
         ease_dollars(G.GAME.current_round.reroll_cost)
         return { dollars = G.GAME.current_round.reroll_cost }
     end
