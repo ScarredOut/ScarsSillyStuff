@@ -125,6 +125,19 @@ return {
                     "{C:attention}less than #2#{} {C:planet}Planet{} cards this run",
                     "{C:inactive}(Currently {C:planet}#3#{C:inactive} Planets used)"
                 }
+            },
+            j_sss_thriftyjoker = {
+                name = "Thrifty Joker",
+                text = {
+                    "{C:mult}+#1#{} Mult if you have {C:attention}not{}",
+                    "used any {C:red}discards{} this round"
+                }
+            },
+            j_sss_earlyjoker = {
+                name = "Early Joker",
+                text = {
+                    "{C:mult}+#1#{} Mult before cards are scored"
+                }
             }
         },
         Tag = {
@@ -164,7 +177,36 @@ return {
                     "+#1#{C:dark_edition} Joker slots{}",
                     "{C:red}#2#{} discards"
                 }
+            },
+            v_sss_generousvouchert1 = {
+                name = "Give and Take",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult{}",
+                    "{C:gold}Generous{} Jokers may now appear {C:attention}in the shop{}",
+                    "{C:inactive,s:0.8}(Gives {C:money,s:0.8}$3{C:inactive,s:0.8} at end of round)"
+                }
+            },
+            v_sss_generousvouchert2 = {
+                name = "Risk and Reward",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult{}",
+                    "{C:gold}Generous{} Jokers now pay out {C:attention}on hand played{}"
+                }
             }
         },
+        Other = {
+            sss_generous = {
+                name = "Generous",
+                text = {
+                    "This Joker will give {C:money}$#1#{}",
+                    "#2#"
+                }
+            }
+        }
+    },
+    misc = {
+        labels = {
+            sss_generous = "Generous"
+        }
     }
 }

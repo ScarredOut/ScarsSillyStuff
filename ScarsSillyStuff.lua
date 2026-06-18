@@ -37,6 +37,7 @@ local files = {
     "content/voucher",
     "content/seal",
     "content/deck",
+    "content/stickers",
     "content/joker/common",
     "content/joker/uncommon",
     "content/joker/rare",

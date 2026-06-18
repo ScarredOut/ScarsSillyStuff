@@ -74,7 +74,12 @@ function SSS.MinusScore(card, score)
 end
 function SSS.GetPlayedHandLevel()
     local text = G.FUNCS.get_poker_hand_info(G.play.cards)
-    local level = to_number(G.GAME.hands[text].level)
+    if G.GAME.hands[text] then
+        level = to_number(G.GAME.hands[text].level)
+    else
+        -- how the fuck
+        return 1
+    end
     return level
 end
 function SSS.IsInShop()

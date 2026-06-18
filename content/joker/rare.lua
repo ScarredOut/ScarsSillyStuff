@@ -83,12 +83,11 @@ SMODS.Joker {
     },
     calculate = function(self, card, context)
         if context.selling_card and context.card.config.center.key == "c_world" then -- remove(self, card, context, true)
-            -- add XMult
-            local xmultvar = card.ability.extra.xmult + card.ability.extra.xmultgain
-            card.ability.extra.xmult = xmultvar
-            return {
-                message = localize('k_upgrade_ex')
-            }
+           SMODS.scale_card(card, {
+	            ref_table = card.ability.extra, -- the table that has the value you are changing in
+                ref_value = "xmult", -- the key to the value in the ref_table
+	            scalar_value = "xmultgain", -- the key to the value to scale by, in the ref_table by default
+            })
         end
         if context.joker_main then
             return {
@@ -133,16 +132,20 @@ SMODS.Joker {
         if context.before then
             card.ability.extra.ismulted = false
         end
-        if context.after and card.ability.extra.ismulted == false then -- chess battle advanced (i have no clue if this will work)
+        if context.final_scoring_step and card.ability.extra.ismulted == false then -- chess battle advanced (i have no clue if this will work)
             local level = SSS.GetPlayedHandLevel()
-            local score = level ^ card.ability.extra.expamount
-            SSS.PlusScore(card, score) -- update: it worked but went through multiple times for some reason. hoping ismulted will fix it
+            local addscore = level ^ card.ability.extra.expamount
             card.ability.extra.ismulted = true
+            return {
+                score = addscore
+            }
         end
         if context.forcetrigger then
             local level = SSS.GetPlayedHandLevel()
-            local score = level ^ card.ability.extra.expamount
-            SSS.PlusScore(card, score)
+            local addscore = level ^ card.ability.extra.expamount
+            return {
+                score = addscore
+            }
         end 
     end
 }

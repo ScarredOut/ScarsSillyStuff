@@ -12,3 +12,13 @@ function get_current_pool(_type, _rarity, _legendary, _append)
     end
 	return gcp(_type, _rarity, _legendary, _append)
 end
+
+-- mod contained functions (technically not hooks but uhhh close enough ok)
+
+function SMODS.current_mod.calculate(self, context)
+	-- Well I don't need it yet....
+end
+
+function SMODS.current_mod.calc_dollar_bonus(self)
+	-- I was going to use this for making generous pay out during the cashout but im lazy + generous is supposed to be inverted rental and rental doesn't do that either
+end

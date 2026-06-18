@@ -2,11 +2,12 @@
 A general purpose content mod with all sorts of things added.
 
 # Additions:
-- 11 Jokers 
+- 13 Jokers 
 - 2 Decks
-- 2 Vouchers
+- 4 Vouchers
 - 2 Seals
 - 1 Tag
+- 1 Sticker
 
 # Cross mod stuff list:
 - Cryptid: 2 Code cards, 1 Joker

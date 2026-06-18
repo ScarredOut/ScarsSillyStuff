@@ -73,12 +73,11 @@ SMODS.Joker {
         }
     },
     calculate = function(self, card, context)
-        if context.end_of_round and context.main_eval and context.game_over == false then
-            SSS.XScore(card)
+        if (context.end_of_round and context.main_eval and context.game_over == false) or context.forcetrigger then
+            return {
+                xscore = card.ability.extra.xscore
+            }
         end
-        if context.forcetrigger then
-            SSS.XScore(card)
-        end 
     end
 }
 SMODS.Joker {
@@ -108,8 +107,10 @@ SMODS.Joker {
         }
     },
     calculate = function(self, card, context)
-        if context.after or context.forcetrigger then
-            SSS.PlusScore(card, card.ability.extra.score * #G.deck.cards)
+        if context.final_scoring_step or context.forcetrigger then
+            return {
+                score = card.ability.extra.score * #G.deck.cards
+            }
         end
     end
 }
@@ -152,6 +153,74 @@ SMODS.Joker {
                     remove = true
                 }
             end
+        end
+    end
+}
+SMODS.Joker {
+    key = "thriftyjoker",
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult
+            }
+        }
+    end,
+    cost = 4,
+    rarity = 1,
+    blueprint_compat = true,
+    eternal_compat = true,
+    discovered = true,
+    atlas = "SSSPlaceholders",
+    pos = {
+        x = 0,
+        y = 0
+    },
+    config = {
+        extra = {
+            mult = 10
+        }
+    },
+    calculate = function(self, card, context)
+        if context.joker_main then
+            if G.GAME.current_round.discards_used then -- Can't hurt to check.
+                if G.GAME.current_round.discards_used == 0 then
+                    return {
+                        mult = card.ability.extra.mult
+                    }
+                end
+            end
+        end
+    end
+}
+SMODS.Joker {
+    key = "earlyjoker",
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult
+            }
+        }
+    end,
+    cost = 3,
+    rarity = 1,
+    blueprint_compat = true,
+    eternal_compat = true,
+    discovered = true,
+    atlas = "SSSPlaceholders",
+    pos = {
+        x = 0,
+        y = 0
+    },
+    config = {
+        extra = {
+            mult = 4
+        }
+    },
+    calculate = function(self, card, context)
+        if context.initial_scoring_step then
+            return {
+                mult = card.ability.extra.mult
+            }
         end
     end
 }

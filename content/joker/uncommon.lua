@@ -123,8 +123,10 @@ SMODS.Joker {
                 xmult = card.ability.extra.xmult
             }
         end
-        if context.after or context.forcetrigger then
-            SSS.MinusScore(card, card.ability.extra.score)
+        if context.final_scoring_step or context.forcetrigger then
+            return {
+                score = (-card.ability.extra.score)
+            }
         end
     end
 }

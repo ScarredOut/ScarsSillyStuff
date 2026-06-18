@@ -7,22 +7,24 @@ SMODS.Tag {
     },
     config = {
         extra = {
-            probability = 2,
+            numerator = 1,
+            denominator = 2,
             money = 50
         }
     },
     loc_vars = function(self, info_queue, tag)
+	    local num, denom = SMODS.get_probability_vars(tag, tag.config.extra.numerator, tag.config.extra.denominator)
         return {
             vars = {
-                G.GAME.probabilities.normal,
-                tag.config.extra.probability,
+                num,
+                denom,
                 tag.config.extra.money
             }
         }
     end,
     apply = function(self, tag, context)
         if context.type == "immediate" then -- ease_dollars exists mate
-            if pseudorandom("slotmachinetag") < G.GAME.probabilities.normal / tag.config.extra.probability then
+            if SMODS.pseudorandom_probability(tag, "slotmachine", tag.config.extra.numerator, tag.config.extra.denominator) then
                 ease_dollars(tag.config.extra.money, true)
                 tag:yep("W", G.C.GOLD, function()
                     return true
