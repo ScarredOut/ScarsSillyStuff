@@ -27,6 +27,22 @@ return {
                 }
             }
         },
+        Blind = {
+            bl_sss_ladder = {
+                name = "The Ladder",
+                text = {
+                    "Every hand except the first",
+                    "increases ante by 1"
+                }
+            },
+            bl_sss_speed = {
+                name = "The Speed", -- please speed i need this. my joker kinda homeless
+                text = {
+                    "+1 win ante if no blinds",
+                    "are skipped this ante"
+                }
+            }
+        },
         Joker = {
             j_sss_pocketaces = {
                 name = "Pocket Aces",
@@ -205,6 +221,9 @@ return {
         }
     },
     misc = {
+        dictionary = {
+            sss_speed_notification_msg = "Win Ante Increased!"
+        },
         labels = {
             sss_generous = "Generous"
         }

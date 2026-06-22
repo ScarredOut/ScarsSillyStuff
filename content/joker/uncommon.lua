@@ -25,6 +25,9 @@ SMODS.Joker {
             total = 0
         }
     },
+    attributes = {
+        "economy" -- not scaling. see also satellite
+    },
     calculate = function(self, card, context)
         if context.buying_card then
             local getamount = SSS.GetAmountOfRedeemedVouchers() or 0
@@ -65,6 +68,11 @@ SMODS.Joker {
         extra = {
             dollars = 10
         }
+    },
+    attributes = {
+        "economy",
+        "tarot",
+        "generation"
     },
     calculate = function(self, card, context)
         if context.setting_blind and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
@@ -117,6 +125,10 @@ SMODS.Joker {
             score = 750
         }
     },
+    attributes = { -- no im not putting it in the score category
+        "xmult", -- in a hypothetical score booster pack would you REALLY be happy to see a joker that has its score modification as a heavy downside
+        "minusscore"
+    },
     calculate = function(self, card, context)
          if context.joker_main or context.forcetrigger then
             return {
@@ -159,6 +171,10 @@ SMODS.Joker {
             planetreq = 5,
             total = 0 -- placeholder
         }
+    },
+    attributes = {
+        "xmult",
+        "planet"
     },
     calculate = function(self, card, context)
         if context.buying_card or context.using_consumeable then -- set total correctly

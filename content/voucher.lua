@@ -9,10 +9,10 @@ SMODS.Voucher {
             }
         }
     end,
-    atlas = 'SSSPlaceholders',
+    atlas = 'SSSVouchers',
     pos = {
-        x = 1,
-        y = 0
+        x = 0,
+        y = 1
     },
     config = { 
         extra = { 
@@ -44,10 +44,10 @@ SMODS.Voucher {
             }
         }
     end,
-    atlas = 'SSSPlaceholders',
+    atlas = 'SSSVouchers',
     pos = {
         x = 1,
-        y = 0
+        y = 1
     },
     config = { 
         extra = { 
@@ -136,6 +136,9 @@ SMODS.Voucher {
         extra = { 
             xmult = 0.5
         }
+    },
+    requires = {
+        "v_sss_generousvouchert1"
     },
     calculate = function(self, card, context)
         if context.joker_main then

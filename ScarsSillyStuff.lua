@@ -1,4 +1,5 @@
 SSS = SMODS.current_mod
+
 if next(SMODS.find_mod("Cryptid")) then -- mod check list (this mod's priority is so high because i plan on adding a lot of crossmod stuff)
     print("[SillyStuff] Cryptid installed.")
     SSS.CryptidInstalled = true
@@ -29,7 +30,9 @@ if next(SMODS.find_mod("Yahimod")) then
 else
     SSS.YahimodInstalled = false
 end
+
 local files = {
+    "func/attributes",
     "func/misc",
     "func/hooks",
     "content/atlas",
@@ -38,6 +41,7 @@ local files = {
     "content/seal",
     "content/deck",
     "content/stickers",
+    "content/blind",
     "content/joker/common",
     "content/joker/uncommon",
     "content/joker/rare",
@@ -73,6 +77,8 @@ if SSS.PTAInstalled then -- paya's crossmod chicanery
 	    assert(SMODS.load_file(v..".lua"))()
     end
 end
+
+
 if false then -- jokers here are disabled
     SMODS.Joker {
         key = "craps",

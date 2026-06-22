@@ -46,3 +46,9 @@ SMODS.Atlas {
     px = 71,
     py = 95
 }
+SMODS.Atlas {
+    key = "SSSBlinds",
+    path = "atlas_blind.png",
+    px = 34,
+    py = 34
+}

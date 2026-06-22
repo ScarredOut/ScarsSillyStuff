@@ -23,6 +23,13 @@ SMODS.Joker {
             mult = 50
         }
     },
+    attributes = {
+        "mult",
+        "rank",
+        "ace",
+        "hand_type",
+        "selfdestruct"
+    },
     calculate = function(self, card, context)
         local count = 0
         if context.joker_main then -- remove(self, card, context, true)
@@ -72,6 +79,10 @@ SMODS.Joker {
             xscore = 5
         }
     },
+    attributes = {
+        "xscore",
+        "trash"
+    },
     calculate = function(self, card, context)
         if (context.end_of_round and context.main_eval and context.game_over == false) or context.forcetrigger then
             return {
@@ -106,6 +117,9 @@ SMODS.Joker {
             score = 25
         }
     },
+    attributes = {
+        "score" -- blue joker isn't full_deck for some reason? i'll just take the precedent
+    },
     calculate = function(self, card, context)
         if context.final_scoring_step or context.forcetrigger then
             return {
@@ -139,6 +153,11 @@ SMODS.Joker {
             max = 15,
             min = 5
         }
+    },
+    attributes = {
+        "economy",
+        "destroy_card",
+        "enhancements"
     },
     calculate = function(self, card, context)
         if context.destroy_card and context.cardarea == G.hand then
@@ -180,6 +199,10 @@ SMODS.Joker {
             mult = 10
         }
     },
+    attributes = {
+        "mult",
+        "discard"
+    },
     calculate = function(self, card, context)
         if context.joker_main then
             if G.GAME.current_round.discards_used then -- Can't hurt to check.
@@ -215,6 +238,9 @@ SMODS.Joker {
         extra = {
             mult = 4
         }
+    },
+    attributes = {
+        "mult"
     },
     calculate = function(self, card, context)
         if context.initial_scoring_step then

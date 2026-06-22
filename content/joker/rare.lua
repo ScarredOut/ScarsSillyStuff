@@ -20,6 +20,11 @@ SMODS.Joker {
             moneygiven = 5
         }
     },
+    attributes = {
+        "planet",
+        "tarot",
+        "generation"
+    },
     calculate = function(self, card, context)
         if context.using_consumeable and context.consumeable.config.center.set == 'Planet' then -- remove(self, card, context, true)
             G.E_MANAGER:add_event(Event({
@@ -81,6 +86,11 @@ SMODS.Joker {
             xmultgain = 1
         }
     },
+    attributes = {
+        "xmult",
+        "scaling",
+        "tarot"
+    },
     calculate = function(self, card, context)
         if context.selling_card and context.card.config.center.key == "c_world" then -- remove(self, card, context, true)
            SMODS.scale_card(card, {
@@ -127,6 +137,10 @@ SMODS.Joker {
             expamount = 5,
             ismulted = true
         }
+    },
+    attributes = {
+        "score",
+        "hand_type"
     },
     calculate = function(self, card, context)
         if context.before then
