@@ -33,9 +33,9 @@ SMODS.Blind {
     calculate = function(self, blind, context)
         if blind.disabled then return end
         if context.setting_blind then
-            if not G.GAME.GB_BLINDS_SKIPPED_THIS_ANTE then
+            if not G.GAME.sss_blinds_skipped_this_ante then
                 G.GAME.win_ante = G.GAME.win_ante + 1
-            elseif G.GAME.GB_BLINDS_SKIPPED_THIS_ANTE <= 0 then
+            elseif G.GAME.sss_blinds_skipped_this_ante <= 0 then
                 G.GAME.win_ante = G.GAME.win_ante + 1
             end
         end

@@ -8,6 +8,7 @@ A general purpose content mod with all sorts of things added.
 - 2 Seals
 - 1 Tag
 - 1 Sticker
+- 2 Blinds
 
 # Cross mod stuff list:
 - Cryptid: 2 Code cards, 1 Joker
@@ -15,4 +16,4 @@ A general purpose content mod with all sorts of things added.
 - Paya's Terrible Additions: 1 Joker
 
 # Credits
-- NaoRiley for score modifying code
+- NaoRiley for (pre-SMODS adding it itself) score modification code

@@ -1,0 +1,26 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+# patch for The Speed's effect
+# maybe i'll use it for other effects? who knows
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+match_indent = true
+pattern = '''G.CONTROLLER.locks.skip_blind = true'''
+position = "after"
+payload = '''
+G.GAME.sss_blinds_skipped_this_ante = (G.GAME.sss_blinds_skipped_this_ante) or 0
+G.GAME.sss_blinds_skipped_this_ante = G.GAME.sss_blinds_skipped_this_ante + 1
+'''
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+match_indent = true
+pattern = '''G.GAME.round_resets.blind_states.Boss = 'Defeated''''
+position = "after"
+payload = '''G.GAME.sss_blinds_skipped_this_ante = 0'''

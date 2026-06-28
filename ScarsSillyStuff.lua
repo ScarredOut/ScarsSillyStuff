@@ -18,8 +18,8 @@ if next(SMODS.find_mod("Paya's Terrible Additions")) then
 else
     SSS.PTAInstalled = false
 end
-if next(SMODS.find_mod("Talisman")) then
-    print("[SillyStuff] Talisman installed.")
+if next(SMODS.find_mod("Talisman")) then -- just use amulet, twin
+    print("[SillyStuff] Talisman installed.") -- one of these days im going to remove this....
     SSS.TalismanInstalled = true
 else
     SSS.TalismanInstalled = false
@@ -136,4 +136,37 @@ if false then -- jokers here are disabled
             end
         end
     }
+    SMODS.Tag {
+    key = "score",
+    atlas = "SSSTags",
+    pos = {
+        x = 1,
+        y = 0
+    },
+    config = {
+        extra = {
+            xscore = 2.5
+        }
+    },
+    loc_vars = function(self, info_queue, tag)
+        return {
+            vars = {
+                tag.config.extra.xscore
+            }
+        }
+    end,
+    apply = function(self, tag, context)
+		if not tag.triggered then
+			return {
+				xscore = self.config.xscore,
+			}
+		end
+		if not tag.triggered and context.type == "eval" then
+			tag.triggered = true
+			tag:yep("X", G.C.RED, function()
+				return true
+			end)
+		end
+	end
+}
 end

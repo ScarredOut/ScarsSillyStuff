@@ -163,6 +163,13 @@ return {
                     "{C:green}#1# in #2# chance{} to",
                     "give {C:money}$#3#{}"
                 }
+            },
+            tag_sss_score = {
+                name = "Score Tag",
+                text = {
+                    "{X:purple,C:white}X#1#{} Score",
+                    "on next hand played"
+                }
             }
         },
         Voucher = {
