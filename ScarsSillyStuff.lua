@@ -136,37 +136,4 @@ if false then -- jokers here are disabled
             end
         end
     }
-    SMODS.Tag {
-    key = "score",
-    atlas = "SSSTags",
-    pos = {
-        x = 1,
-        y = 0
-    },
-    config = {
-        extra = {
-            xscore = 2.5
-        }
-    },
-    loc_vars = function(self, info_queue, tag)
-        return {
-            vars = {
-                tag.config.extra.xscore
-            }
-        }
-    end,
-    apply = function(self, tag, context)
-		if not tag.triggered then
-			return {
-				xscore = self.config.xscore,
-			}
-		end
-		if not tag.triggered and context.type == "eval" then
-			tag.triggered = true
-			tag:yep("X", G.C.RED, function()
-				return true
-			end)
-		end
-	end
-}
 end
