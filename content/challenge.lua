@@ -6,5 +6,11 @@ SMODS.Challenge {
             { id = 'sss_minus_shop_slot', value = 1 },
         --    { id = 'sss_minus_booster_slot_shop', value = 1 }, this change is shit to play with so i removed it
         }
+    },
+    restrictions = {
+        banned_cards = {
+            { id = 'v_reroll_surplus' },
+            { id = 'v_reroll_glut' }
+        }
     }
 }

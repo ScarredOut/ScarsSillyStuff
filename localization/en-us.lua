@@ -218,6 +218,24 @@ return {
             }
         },
         Other = {
+            sss_brown_seal = {
+                label = 'Brown Seal',
+                name = 'Brown Seal',
+                text = {
+                    "Creates a random {C:attention}Joker{}",
+                    "when scored",
+                    "{C:inactive}(Must have room){}"
+                }
+            },
+            sss_filled_seal = {
+                label = 'Filled Seal',
+                name = 'Filled Seal',
+                text = {
+                    "Creates a random {C:attention}Eternal Joker{}",
+                    "when scored",
+                    "{C:inactive}(Does {}{C:attention}NOT{}{C:inactive} need room){}"
+                }
+            },
             sss_generous = {
                 name = "Generous",
                 text = {
@@ -235,7 +253,9 @@ return {
             sss_speed_notification_msg = "Win Ante Increased!"
         },
         labels = {
-            sss_generous = "Generous"
+            sss_generous = "Generous",
+            sss_brown_seal = "Brown Seal",
+            sss_filled_seal = "Filled Seal",
         },
         v_text = {
             ch_c_sss_no_rerolling = {"Rerolling is {C:red}disabled{}"}, -- this has to be a table or it crashes. i guess bro
