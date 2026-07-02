@@ -228,11 +228,19 @@ return {
         }
     },
     misc = {
+        challenge_names = {
+            c_sss_make_it_work = "Make It Work"
+        },
         dictionary = {
             sss_speed_notification_msg = "Win Ante Increased!"
         },
         labels = {
             sss_generous = "Generous"
-        }
+        },
+        v_text = {
+            ch_c_sss_no_rerolling = {"Rerolling is {C:red}disabled{}"}, -- this has to be a table or it crashes. i guess bro
+            ch_c_sss_minus_shop_slot = {"{C:red}-#1#{} shop slot"},
+            ch_c_sss_minus_booster_slot_shop = {"{C:red}-#1#{} booster pack in the shop"}
+        },
     }
 }

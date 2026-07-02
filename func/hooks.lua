@@ -13,6 +13,19 @@ function get_current_pool(_type, _rarity, _legendary, _append)
 	return gcp(_type, _rarity, _legendary, _append)
 end
 
+-- start_run hook for Make It Work's negative shop slot rules
+-- should run AFTER everything in start_run so modifiers will be set correctly courtesy of balatro
+local sr = Game.start_run
+function Game:start_run(args)
+	sr(self, args)
+	if G.GAME.modifiers.sss_minus_shop_slot then
+		change_shop_size(-G.GAME.modifiers.sss_minus_shop_slot)
+	end
+	if G.GAME.modifiers.sss_minus_booster_slot_shop then
+		SMODS.change_booster_limit(-G.GAME.modifiers.sss_minus_booster_slot_shop)
+	end
+end
+
 -- mod contained functions (technically not hooks but uhhh close enough ok)
 
 function SMODS.current_mod.calculate(self, context)

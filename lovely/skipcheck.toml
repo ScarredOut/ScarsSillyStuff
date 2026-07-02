@@ -2,9 +2,10 @@
 version = "1.0.0"
 dump_lua = true
 priority = 0
+
 # patch for The Speed's effect
 # maybe i'll use it for other effects? who knows
-
+# nabbed from Grab Bag
 
 [[patches]]
 [patches.pattern]

@@ -9,6 +9,7 @@ A general purpose content mod with all sorts of things added.
 - 1 Tag
 - 1 Sticker
 - 2 Blinds
+- 1 Challenge
 
 # Cross mod stuff list:
 - Cryptid: 2 Code cards, 1 Joker

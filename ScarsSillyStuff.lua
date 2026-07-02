@@ -42,6 +42,7 @@ local files = {
     "content/deck",
     "content/stickers",
     "content/blind",
+    "content/challenge",
     "content/joker/common",
     "content/joker/uncommon",
     "content/joker/rare",
