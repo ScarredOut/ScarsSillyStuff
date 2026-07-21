@@ -46,6 +46,7 @@ local files = {
     "content/joker/common",
     "content/joker/uncommon",
     "content/joker/rare",
+    "content/consumable/spectral"
 }
 local FamiliarFiles = {
     "content/crossmod/Familiar/deck",

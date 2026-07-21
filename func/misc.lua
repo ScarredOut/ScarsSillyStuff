@@ -96,3 +96,39 @@ function SSS.GetAmountOfPlanetsUsed() -- Should this REALLLY be a function? eh w
 	end
     return planets_used
 end
+function SSS.AttentionTextUpgradeMS(card) -- hardcoded but DON'T CARE!!!! yet
+    G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    attention_text({
+                        text = localize('sss_magenta_upgrade'),
+                        scale = 0.5,
+                        hold = 1,
+                        major = card,
+                        backdrop_colour = G.C.CHIPS,
+                        offset = 5,
+                    })
+                    G.E_MANAGER:add_event(Event({
+                        trigger = 'after',
+                        delay = 0.06 * G.SETTINGS.GAMESPEED,
+                        blockable = false,
+                        blocking = false,
+                        func = function()
+                            play_sound('gold_seal', 0.76, 0.4)
+                            return true
+                        end
+                    }))
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end
+            }))
+end
+function SSS.DoesXExistInTable(needle, haystack)
+    for i,v in pairs(haystack) do
+        if v == needle then
+            return true
+        end
+    end
+    return false
+end

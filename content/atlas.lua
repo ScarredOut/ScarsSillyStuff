@@ -52,3 +52,9 @@ SMODS.Atlas {
     px = 34,
     py = 34
 }
+SMODS.Atlas {
+    key = "SSSSpectrals",
+    path = "atlas_spectral.png",
+    px = 71,
+    py = 95
+}

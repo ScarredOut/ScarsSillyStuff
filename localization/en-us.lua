@@ -217,9 +217,18 @@ return {
                 }
             }
         },
+        Spectral = {
+            c_sss_apartment = {
+                name = 'Apartment',
+                text = {
+                    "Converts a {C:gold}Rental{} sticker",
+                    "into a {C:legendary}Eternal{} sticker",
+                    "on a selected {C:attention}Joker{}"
+                }
+            }
+        },
         Other = {
             sss_brown_seal = {
-                label = 'Brown Seal',
                 name = 'Brown Seal',
                 text = {
                     "Creates a random {C:attention}Joker{}",
@@ -228,12 +237,18 @@ return {
                 }
             },
             sss_filled_seal = {
-                label = 'Filled Seal',
                 name = 'Filled Seal',
                 text = {
                     "Creates a random {C:attention}Eternal Joker{}",
                     "when scored",
                     "{C:inactive}(Does {}{C:attention}NOT{}{C:inactive} need room){}"
+                }
+            },
+            sss_magenta_seal = {
+                name = 'Magenta Seal',
+                text = {
+                    "When this card is {C:attention}discarded{}, gives",
+                    "{C:chips}+#1# chips{} to {C:attention}all other cards held in hand{}"
                 }
             },
             sss_generous = {
@@ -250,12 +265,14 @@ return {
             c_sss_make_it_work = "Make It Work"
         },
         dictionary = {
-            sss_speed_notification_msg = "Win Ante Increased!"
+            sss_speed_notification_msg = "Win Ante Increased!",
+            sss_magenta_upgrade = "Upgraded!"
         },
         labels = {
             sss_generous = "Generous",
             sss_brown_seal = "Brown Seal",
             sss_filled_seal = "Filled Seal",
+            sss_magenta_seal = "Magenta Seal"
         },
         v_text = {
             ch_c_sss_no_rerolling = {"Rerolling is {C:red}disabled{}"}, -- this has to be a table or it crashes. i guess bro

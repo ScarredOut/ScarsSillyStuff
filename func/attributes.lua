@@ -25,6 +25,15 @@ SMODS.Attribute {
 SMODS.Attribute {
     key = "minusscore"
 }
+SMODS.Attribute {
+    key = "seal_spectral",
+    keys = {
+       "c_talisman",
+       "c_deja_vu",
+       "c_trance",
+       "c_medium"
+    }
+}
 
 
 -- and one more thing to remind myself: once star counting and stars in the sky have art im adding them to the space joker pool
