@@ -5,11 +5,12 @@ A general purpose content mod with all sorts of things added.
 - 13 Jokers 
 - 2 Decks
 - 4 Vouchers
-- 2 Seals
+- 3 Seals
 - 1 Tag
 - 1 Sticker
 - 2 Blinds
 - 1 Challenge
+- 1 Spectral Card
 
 # Cross mod stuff list:
 - Cryptid: 2 Code cards, 1 Joker

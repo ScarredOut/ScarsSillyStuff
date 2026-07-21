@@ -28,5 +28,8 @@ SMODS.Consumable {
             joker:remove_sticker("rental")
             joker:add_sticker("eternal", true)
         end
+    end,
+    in_pool = function(self, args)
+        return G.GAME.modifiers.enable_rentals_in_shop
     end
 }
