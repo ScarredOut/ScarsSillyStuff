@@ -9,7 +9,7 @@ A general purpose content mod with all sorts of things added.
 - 1 Tag
 - 1 Sticker
 - 2 Blinds
-- 1 Challenge
+- 2 Challenges
 - 1 Spectral Card
 
 # Cross mod stuff list:
