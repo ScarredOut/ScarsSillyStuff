@@ -44,7 +44,7 @@ SMODS.Challenge {
             { id = 'tag_skip' },
             { id = 'tag_orbital' },
             { id = 'tag_economy' },
-            { id = 'sss_tag_slotmachine' }
+            { id = 'tag_sss_slotmachine' }
         }
     }
 }
