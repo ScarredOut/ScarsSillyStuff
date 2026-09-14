@@ -262,7 +262,8 @@ return {
     },
     misc = {
         challenge_names = {
-            c_sss_make_it_work = "Make It Work"
+            c_sss_make_it_work = "Make It Work",
+            c_sss_shiny_hunting = "Shiny Hunting"
         },
         dictionary = {
             sss_speed_notification_msg = "Win Ante Increased!",
@@ -277,7 +278,8 @@ return {
         v_text = {
             ch_c_sss_no_rerolling = {"Rerolling is {C:red}disabled{}"}, -- this has to be a table or it crashes. i guess bro
             ch_c_sss_minus_shop_slot = {"{C:red}-#1#{} shop slot"},
-            ch_c_sss_minus_booster_slot_shop = {"{C:red}-#1#{} booster pack in the shop"}
+            ch_c_sss_minus_booster_slot_shop = {"{C:red}-#1#{} booster pack in the shop"},
+            ch_c_sss_edition_required_end = {"All of your {C:attention}Jokers{} must have an {C:dark_edition}edition{} by Ante 8"}
         },
     }
 }

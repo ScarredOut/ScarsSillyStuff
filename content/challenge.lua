@@ -14,3 +14,16 @@ SMODS.Challenge {
         }
     }
 }
+SMODS.Challenge {
+    key = "shiny_hunting",
+    rules = {
+        custom = {
+            { id = 'sss_edition_required_end' }
+        }
+    },
+    vouchers = {
+        {id = 'v_hone'},
+        {id = 'v_glow_up'}
+    },
+    restrictions = {}
+}

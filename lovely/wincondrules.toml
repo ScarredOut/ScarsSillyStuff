@@ -1,0 +1,33 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# patch for Shiny Hunting's lose condition
+# stolen and then edited from ChallengerPlus by Makson6327
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+match_indent = true
+pattern = '''
+-- TARGET: main end_of_round evaluation
+'''
+position = "after"
+payload = '''
+if not G.GAME.won and G.GAME.modifiers.sss_edition_required_end and G.GAME.round_resets.ante >= G.GAME.win_ante and G.GAME.blind_on_deck == 'Boss' then
+    local editions = 0
+    print("[SSS] edcheck")
+    for i = 1, #G.jokers.cards do
+        print(G.jokers.cards[i])
+        if G.jokers.cards[i].edition then 
+            editions = editions + 1
+        end
+    end
+    print(editions)
+    if editions ~= #G.jokers.cards then
+        print("omega blunder")
+        game_over = true
+    end
+end
+'''
