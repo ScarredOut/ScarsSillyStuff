@@ -18,4 +18,5 @@ A general purpose content mod with all sorts of things added.
 - Paya's Terrible Additions: 1 Joker
 
 # Credits
-- NaoRiley for (pre-SMODS adding it itself) score modification code
+- The many people on the Balatro Discord who endured the torrent of questions I asked
+- VanillaRemade and any other mod whose code was repurposed and hacked together for this
