@@ -8,7 +8,7 @@ A general purpose content mod with all sorts of things added.
 - 3 Seals
 - 1 Tag
 - 1 Sticker
-- 2 Blinds
+- 3 Blinds
 - 2 Challenges
 - 1 Spectral Card
 
