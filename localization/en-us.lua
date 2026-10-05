@@ -41,6 +41,13 @@ return {
                     "+1 win ante if no blinds",
                     "are skipped this ante"
                 }
+            },
+            bl_sss_stifler = {
+                name = "The Stifler",
+                text = {
+                    "Score is set to 0",
+                    "before final hand"
+                }
             }
         },
         Joker = {
