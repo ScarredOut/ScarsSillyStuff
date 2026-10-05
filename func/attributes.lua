@@ -39,10 +39,27 @@ SMODS.Attribute {
 SMODS.Attribute {
     key = "edition_tag",
     keys = {
-       "tag_negative",
+       "tag_negative", -- Vanilla
        "tag_holo",
        "tag_foil",
-       "tag_polychrome"
+       "tag_polychrome",
+       "tag_cry_glitched", -- Cryptid
+       "tag_cry_oversat",
+       "tag_cry_mosaic",
+       "tag_cry_gold",
+       "tag_cry_glass",
+       "tag_cry_blur",
+       "tag_cry_astral",
+       "tag_cry_m",
+       "tag_crv_sunwashed", -- Revo's Vault
+       "tag_crv_pastel",
+       "tag_crv_bloom",
+       "tag_crv_magnetised",
+       "tag_crv_antichrome",
+       "tag_crv_radiated",
+       "tag_fam_aureate", -- Familiar
+       "tag_fam_speckle",
+       "tag_fam_statics",
     }
 }
 

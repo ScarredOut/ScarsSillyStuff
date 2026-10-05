@@ -37,7 +37,7 @@ SMODS.Joker {
                 if v:get_id() == 14 then count = count + 1 end
             end
             if next(context.poker_hands['Pair']) and count == 2 then
-                count = 0 
+                count = 0
                 SSS.DestroySelfJoker(card)
                 return {
                     mult_mod = card.ability.extra.mult,

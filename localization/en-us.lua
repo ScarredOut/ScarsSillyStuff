@@ -286,7 +286,10 @@ return {
             ch_c_sss_no_rerolling = {"Rerolling is {C:red}disabled{}"}, -- this has to be a table or it crashes. i guess bro
             ch_c_sss_minus_shop_slot = {"{C:red}-#1#{} shop slot"},
             ch_c_sss_minus_booster_slot_shop = {"{C:red}-#1#{} booster pack in the shop"},
-            ch_c_sss_edition_required_end = {"All of your {C:attention}Jokers{} must have an {C:dark_edition}edition{} by Ante 8"}
+            ch_c_sss_edition_required_end = {"All of your {C:attention}Jokers{} must have an {C:dark_edition}edition{} by the winning ante"},
+            -- challenge rule strings with cosmetic in the name are as the name suggests cosmetic
+            -- their functionality is handled with other things. setting the challenge rule to true does nothing
+            ch_c_sss_non_edition_tags_banned_cosmetic = {"All non-{C:dark_edition}edition{} {C:attention}Tags{} are unable to appear"}
         },
     }
 }

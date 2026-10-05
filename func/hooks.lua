@@ -24,6 +24,11 @@ function Game:start_run(args)
 	if G.GAME.modifiers.sss_minus_booster_slot_shop then
 		SMODS.change_booster_limit(-G.GAME.modifiers.sss_minus_booster_slot_shop)
 	end
+	--if G.GAME.modifiers.sss_non_edition_tags_banned_cosmetic then
+		-- Ummm
+		-- Maybe I'll use this if adding a function to banned_tags in the challenge didn't work
+		-- But the code looks like it's running so probably not
+	--end
 end
 
 -- mod contained functions (technically not hooks but uhhh close enough ok)
