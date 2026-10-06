@@ -1,7 +1,7 @@
 {
 	"name": "Scars_Silly_Stuff",
 	"description": "A content Balatro mod. It has various contraptions and doohickeys inside. Please be careful, they may bite.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"website_url": "https://github.com/ScarredOut/ScarsSillyStuff",
 	"dependencies": [
 		"Steamodded-Steamodded-26.1002.0",
