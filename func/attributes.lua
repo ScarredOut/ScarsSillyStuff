@@ -60,6 +60,8 @@ SMODS.Attribute {
        "tag_fam_aureate", -- Familiar
        "tag_fam_speckle",
        "tag_fam_statics",
+       "tag_zero_gala", -- 0 ERROR
+       "tag_zero_occult",
     }
 }
 
